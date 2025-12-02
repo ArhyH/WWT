@@ -107,9 +107,8 @@
         </div>
         <div class="content">
           <nav class="navigation">
-            <ul class="navigation__list">
-              <h1 class="navigation__title">Твои списки дел</h1>
-            </ul>
+            <h1 class="navigation__title">Твои списки дел</h1>
+            <ul class="navigation__list" data-placement="lists"></ul>
           </nav>
         </div>
       </div>
@@ -170,13 +169,24 @@
               fill-rule="evenodd"
               fill="currentColor"
               d="
-      M 13,2 A 11,11 0 1,1 13,24 A 11,11 0 1,1 13,2 Z
-      M 13,7 A 6,6 0 1,0 13,19 A 6,6 0 1,0 13,7 Z
-    "
+                M 13,2 A 11,11 0 1,1 13,24 A 11,11 0 1,1 13,2 Z
+                M 13,7 A 6,6 0 1,0 13,19 A 6,6 0 1,0 13,7 Z
+              "
             />
           </g>
         </svg>
       </button>
+    </template>
+
+    <template id="navigation-item">
+      <li class="navigation__item">
+        <button
+          class="button button--theme--transparent-underlined button--size--48-stratched is-separator-enabled"
+        >
+          <p class="button__text">item title</p>
+          <span class="button__separator"></span>
+        </button>
+      </li>
     </template>
   </body>
 </html>

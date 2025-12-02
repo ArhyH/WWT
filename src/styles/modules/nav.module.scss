@@ -5,6 +5,10 @@
     margin: 0;
     gap: var(--size-80);
     list-style: none;
+
+    &[data-placement='lists'] {
+      gap: var(--size-40);
+    }
   }
 
   &__title {
