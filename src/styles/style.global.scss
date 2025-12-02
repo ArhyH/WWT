@@ -1,10 +1,11 @@
+@use './variables/main.module.scss' as variables;
+@use './modules/main.module.scss' as modules;
+
 #root {
   height: 100%;
   width: 100%;
 }
 
-.app {
-  background-color: aqua;
-  height: 100%;
-  width: 100%;
+body {
+  margin: 0;
 }

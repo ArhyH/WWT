@@ -1,0 +1,9 @@
+.white-wolf-tasks {
+  background-image: url(../../images/white-wolf-bg-1x.png);
+  background-size: cover;
+  height: 100vh;
+
+  @media (min-resolution: var(--retina-dppx)), (min-resolution: var(--retina-dpi)) {
+    background-image: url(../../images/white-wolf-bg-2x.png);
+  }
+}
