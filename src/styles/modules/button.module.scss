@@ -10,9 +10,14 @@
   color: var(--gray-a100);
   fill: currentColor;
   position: relative;
+  text-decoration: none;
+  font-weight: 400;
+
+  &.is-rotated {
+    rotate: 180deg;
+  }
 
   &--size {
-
     &--100-squared {
       width: var(--size-100);
       height: var(--size-100);
@@ -43,7 +48,6 @@
   }
 
   &--theme {
-
     &--red-300 {
       background-color: var(--red-300);
       color: var(--gray-a100);
@@ -163,23 +167,21 @@
       background-color: var(--transparent);
       color: var(--gray-200);
 
-
       @media (hover: hover) {
         &:hover {
-          color: var(--gray-300);
+          color: var(--red-300);
         }
       }
 
       &:active,
       &.is-active {
-        color: var(--red-300);
+        color: var(--gray-300);
       }
     }
 
     &--yellow-400 {
       background-color: var(--transparent);
       color: var(--yellow-400);
-
 
       @media (hover: hover) {
         &:hover {
@@ -196,7 +198,6 @@
     &--yellow-400-underlined {
       background-color: var(--transparent);
       color: var(--yellow-400);
-
 
       @media (hover: hover) {
         &:hover {
@@ -225,7 +226,10 @@
         &:hover {
           background-image: none;
           background-color: var(--yellow-500);
-          box-shadow: 0 0 0 1px var(--yellow-400), 0 0 0 3px var(--gray-1000), 0 0 0 4px var(--yellow-400);
+          box-shadow:
+            0 0 0 1px var(--yellow-400),
+            0 0 0 3px var(--gray-1000),
+            0 0 0 4px var(--yellow-400);
         }
       }
 
@@ -233,7 +237,10 @@
       &.is-active {
         background-image: none;
         background-color: var(--yellow-400);
-        box-shadow: 0 0 0 1px var(--yellow-400), 0 0 0 3px var(--gray-1000), 0 0 0 4px var(--yellow-400);
+        box-shadow:
+          0 0 0 1px var(--yellow-400),
+          0 0 0 3px var(--gray-1000),
+          0 0 0 4px var(--yellow-400);
       }
     }
   }

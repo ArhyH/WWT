@@ -1,9 +1,38 @@
 .white-wolf-tasks {
+  display: flex;
   background-image: url(../../images/white-wolf-bg-1x.png);
+  background-color: var(--gray-500);
   background-size: cover;
   height: 100vh;
 
-  @media (min-resolution: var(--retina-dppx)), (min-resolution: var(--retina-dpi)) {
+  @media (min-resolution: var(--retina-dppx)),
+    (min-resolution: var(--retina-dpi)) {
     background-image: url(../../images/white-wolf-bg-2x.png);
   }
+
+  &[data-page='main'] {
+    .content {
+      display: flex;
+      margin-left: var(--size-154);
+      margin-top: var(--size-236);
+    }
+  }
+
+  &[data-page='lists'] {
+    .content {
+      display: flex;
+      margin-left: var(--size-128);
+      margin-top: var(--size-48);
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content {
+  display: flex;
 }

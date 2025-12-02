@@ -1,5 +1,16 @@
 .header {
   display: flex;
   padding: 24px 20px;
+  align-items: center;
   justify-content: space-between;
+
+  &__title {
+    color: var(--white);
+    font-size: var(--size-64);
+    font-weight: 500;
+  }
+
+  &__action {
+    width: var(--size-100);
+  }
 }

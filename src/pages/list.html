@@ -7,7 +7,7 @@
     <title>white-wolf-tasks</title>
   </head>
   <body>
-    <div class="white-wolf-tasks" data-page="main">
+    <div class="white-wolf-tasks" data-page="lists">
       <div class="sidebar visually-hidden">
         <div class="sidebar__header">
           <div class="user"></div>
@@ -108,33 +108,75 @@
         <div class="content">
           <nav class="navigation">
             <ul class="navigation__list">
-              <li class="navigation__item">
-                <a
-                  id="nav-button-lists"
-                  href="./src/pages/list.html"
-                  class="button button--theme--yellow-600-gradient button--size--116-stretched"
-                >
-                  Просмотреть списки
-                </a>
-              </li>
-              <li class="navigation-item">
-                <a
-                  id="nav-button-tags"
-                  href="#"
-                  class="button button--theme--yellow-600-gradient button--size--116-stretched"
-                >
-                  Просмотреть теги
-                </a>
-              </li>
+              <h1 class="navigation__title">Твои списки дел</h1>
             </ul>
           </nav>
         </div>
       </div>
     </div>
-    <script type="module" src="/src/index.js"></script>
+    <script type="module" src="../index.js"></script>
 
-    <template id="header-title">
-      <h1 class="header__title">Название списка</h1>
+    <template id="list-settings-button-template">
+      <button
+        id="list-settings-button"
+        class="button button--theme--transparent button--size--100-squared visually-hidden"
+      >
+        <svg
+          width="72"
+          height="72"
+          viewBox="0 0 72 72"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- First gear (top-left) -->
+          <g transform="translate(22, 18)">
+            <!-- Gear teeth -->
+            <path d="M 14,0 L 16,0 L 16,4 L 14,4 Z" fill="currentColor" />
+            <path d="M 0,14 L 0,16 L 4,16 L 4,14 Z" fill="currentColor" />
+            <path d="M 14,26 L 16,26 L 16,30 L 14,30 Z" fill="currentColor" />
+            <path d="M 26,14 L 30,14 L 30,16 L 26,16 Z" fill="currentColor" />
+
+            <path d="M 4,4 L 7,4 L 7,7 L 4,7 Z" fill="currentColor" />
+            <path d="M 23,4 L 26,4 L 26,7 L 23,7 Z" fill="currentColor" />
+            <path d="M 4,23 L 7,23 L 7,26 L 4,26 Z" fill="currentColor" />
+            <path d="M 23,23 L 26,23 L 26,26 L 23,26 Z" fill="currentColor" />
+
+            <!-- Outer circle with inner hole -->
+            <path
+              fill-rule="evenodd"
+              fill="currentColor"
+              d="
+                  M 15,2 A 13,13 0 1,1 15,28 A 13,13 0 1,1 15,2 Z
+                  M 15,8 A 7,7 0 1,0 15,22 A 7,7 0 1,0 15,8 Z
+                "
+            />
+          </g>
+
+          <!-- Second gear (bottom-right) -->
+          <g transform="translate(32, 30)">
+            <!-- Gear teeth -->
+            <path d="M 12,0 L 14,0 L 14,3 L 12,3 Z" fill="currentColor" />
+            <path d="M 0,12 L 0,14 L 3,14 L 3,12 Z" fill="currentColor" />
+            <path d="M 12,23 L 14,23 L 14,26 L 12,26 Z" fill="currentColor" />
+            <path d="M 23,12 L 26,12 L 26,14 L 23,14 Z" fill="currentColor" />
+
+            <path d="M 3,3 L 6,3 L 6,6 L 3,6 Z" fill="currentColor" />
+            <path d="M 20,3 L 23,3 L 23,6 L 20,6 Z" fill="currentColor" />
+            <path d="M 3,20 L 6,20 L 6,23 L 3,23 Z" fill="currentColor" />
+            <path d="M 20,20 L 23,20 L 23,23 L 20,23 Z" fill="currentColor" />
+
+            <!-- Outer circle with inner hole -->
+            <path
+              fill-rule="evenodd"
+              fill="currentColor"
+              d="
+      M 13,2 A 11,11 0 1,1 13,24 A 11,11 0 1,1 13,2 Z
+      M 13,7 A 6,6 0 1,0 13,19 A 6,6 0 1,0 13,7 Z
+    "
+            />
+          </g>
+        </svg>
+      </button>
     </template>
   </body>
 </html>

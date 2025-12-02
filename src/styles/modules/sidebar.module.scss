@@ -1,0 +1,18 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: var(--parent);
+  width: var(--size-482);
+  background-color: var(--gray-600);
+  margin-left: 76px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--size-24);
+    padding-left: var(--size-32);
+    padding-right: var(--size-8);
+  }
+}

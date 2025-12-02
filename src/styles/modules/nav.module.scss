@@ -1,0 +1,19 @@
+.navigation {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: var(--size-80);
+    list-style: none;
+  }
+
+  &__title {
+    color: var(--gray-a100);
+    font-size: var(--size-64);
+    font-weight: 500;
+  }
+
+  &__title + &__list {
+    margin-top: var(--size-120);
+  }
+}
