@@ -1,0 +1,23 @@
+.rhombus {
+  display: block;
+  background-color: var(--gray-1100);
+  border-radius: var(--size-1);
+  border: 1px solid var(--yellow-400);
+  box-shadow: 0 0 4px 0 var(--yellow-300);
+  rotate: 44.5deg;
+  z-index: 2;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  &--size {
+    &--8 {
+      width: var(--size-8);
+      height: var(--size-8);
+    }
+
+    &--12 {
+      width: var(--size-12);
+      height: var(--size-12);
+    }
+  }
+}

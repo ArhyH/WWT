@@ -1,0 +1,45 @@
+.create-todo {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-24);
+  }
+
+  &__label {
+    display: flex;
+    gap: var(--size-40);
+    font-size: var(--size-24);
+    color: var(--gray-a100);
+
+    &.is-required {
+      font-size: var(--size-48);
+    }
+  }
+
+  &__name {
+    margin: var(--size-0);
+    width: var(--size-228);
+  }
+
+  &__input {
+    background-color: transparent;
+    color: var(--gray-a100);
+    // width: var(--parent);
+    outline: none;
+    font-size: inherit;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid var(--yellow-400);
+
+    &::placeholder {
+      color: var(--gray-300);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--size-40);
+    justify-content: center;
+    margin-top: var(--size-110);
+  }
+}

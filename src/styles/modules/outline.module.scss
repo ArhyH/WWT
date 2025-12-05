@@ -1,0 +1,34 @@
+.outline {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+
+  &__left {
+    position: absolute;
+    top: var(--size-26);
+    bottom: var(--size-26);
+    left: var(--size-12);
+  }
+
+  &__right {
+    position: absolute;
+    top: var(--size-26);
+    bottom: var(--size-26);
+    right: var(--size-12);
+  }
+
+  &__top {
+    position: absolute;
+    top: var(--size-12);
+    left: var(--size-10);
+    right: var(--size-10);
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: var(--size-12);
+    left: var(--size-10);
+    right: var(--size-10);
+  }
+}
+

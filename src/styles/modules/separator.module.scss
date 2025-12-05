@@ -1,0 +1,25 @@
+.separator {
+  display: block;
+
+  &--type {
+    &--horizontal {
+      width: var(--parent);
+      height: var(--size-1);
+    }
+
+    &--vertical {
+      height: var(--parent);
+      width: var(--size-1);
+    }
+  }
+
+  &--theme {
+
+    &--gray-1100-outlined {
+      background-color: var(--gray-1100);
+      border: 1px solid var(--yellow-400);
+      border-radius: var(--size-1);
+      box-shadow: 0 0 4px 0 var(--yellow-300);
+    }
+  }
+}
