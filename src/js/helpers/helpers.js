@@ -1,9 +1,13 @@
 import { VISYALLY_HIDDEN } from '../consts/consts';
 
-export const toggleElementVisibility = (element) => {
+const toggleElementVisibility = (element) => {
   element.classList.toggle(VISYALLY_HIDDEN);
 };
 
-export const checkPage = (page, expectedPage) => {
+const checkPage = (page, expectedPage) => {
   return page.dataset.page === expectedPage;
 };
+
+const checkKeyPress = (e, keyCode) => e.keyCode === keyCode;
+
+export { toggleElementVisibility, checkPage, checkKeyPress };

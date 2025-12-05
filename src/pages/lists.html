@@ -40,6 +40,7 @@
           </button>
         </div>
       </div>
+
       <div class="main">
         <div class="header">
           <div id="sidebar-action" class="header__action">
@@ -105,6 +106,7 @@
             </button>
           </div>
         </div>
+
         <div class="content">
           <nav class="navigation">
             <h1 class="navigation__title">Твои списки дел</h1>
@@ -112,8 +114,12 @@
           </nav>
         </div>
       </div>
+
       <div class="float-element">
-        <button class="button button--size--100-circled button--theme--gray-600" id="modal-trigger">
+        <button
+          class="button button--size--100-circled button--theme--gray-600"
+          id="modal-trigger"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="72"
@@ -121,48 +127,77 @@
             viewBox="0 0 72 72"
             fill="none"
           >
-            <path fill="currentColor" d="M35.685 72 32.13 45.947h7.11L35.685 72ZM35.684 0l3.555 26.052h-7.11L35.684 0ZM72 35.684 45.947 39.24v-7.111L72 35.684ZM0 35.684l26.053-3.555v7.11L0 35.684ZM35.81 42 42 35.81l-6.19-6.189-6.189 6.19L35.811 42Z"/>
-            <path stroke="currentColor" d="m35.91 44.135 8.225-8.225-8.225-8.225-8.225 8.225 8.225 8.225Z"/>
+            <path
+              fill="currentColor"
+              d="M35.685 72 32.13 45.947h7.11L35.685 72ZM35.684 0l3.555 26.052h-7.11L35.684 0ZM72 35.684 45.947 39.24v-7.111L72 35.684ZM0 35.684l26.053-3.555v7.11L0 35.684ZM35.81 42 42 35.81l-6.19-6.189-6.189 6.19L35.811 42Z"
+            />
+            <path
+              stroke="currentColor"
+              d="m35.91 44.135 8.225-8.225-8.225-8.225-8.225 8.225 8.225 8.225Z"
+            />
           </svg>
         </button>
       </div>
 
       <div class="todo-modal is-hidden">
-
         <div class="outline">
           <div class="outline outline__left">
-            <span class="separator separator--type--vertical separator--theme--gray-1100-outlined"></span>
+            <span
+              class="separator separator--type--vertical separator--theme--gray-1100-outlined"
+            ></span>
           </div>
 
           <div class="outline outline__right">
-            <span class="separator separator--type--vertical separator--theme--gray-1100-outlined"></span>
+            <span
+              class="separator separator--type--vertical separator--theme--gray-1100-outlined"
+            ></span>
           </div>
 
           <div class="outline outline__top">
             <span class="rhombus rhombus--size--8"></span>
-            <span class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"></span>
+            <span
+              class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"
+            ></span>
             <span class="rhombus rhombus--size--8"></span>
-            <span class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"></span>
+            <span
+              class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"
+            ></span>
             <span class="rhombus rhombus--size--8"></span>
           </div>
 
           <div class="outline outline__bottom">
             <span class="rhombus rhombus--size--8"></span>
-            <span class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"></span>
+            <span
+              class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"
+            ></span>
             <span class="rhombus rhombus--size--8"></span>
-            <span class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"></span>
+            <span
+              class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"
+            ></span>
             <span class="rhombus rhombus--size--8"></span>
           </div>
         </div>
 
         <div class="todo-modal__header">
-          <h2 class="todo-modal__title">
-            Введите название списка
-          </h2>
+          <h2 class="todo-modal__title">Введите название списка</h2>
 
           <div class="todo-modal__close">
-            <button class="button button--size--40-circled button--theme--gray-300" id="modal-close">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path fill="currentColor" d="M9.247 12.487 1.733 20 0 18.267l7.514-7.514 1.733 1.734ZM20 18.267 18.266 20l-7.513-7.513 1.733-1.733L20 18.267Zm-8.231-8.232-1.735 1.735-1.733-1.735 1.733-1.733 1.735 1.733ZM9.247 7.514 7.514 9.247 0 1.734 1.733 0l7.514 7.514ZM20 1.734l-7.514 7.513-1.733-1.733L18.266 0 20 1.734Z"/></svg>
+            <button
+              class="button button--size--40-circled button--theme--gray-300"
+              id="modal-close"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  fill="currentColor"
+                  d="M9.247 12.487 1.733 20 0 18.267l7.514-7.514 1.733 1.734ZM20 18.267 18.266 20l-7.513-7.513 1.733-1.733L20 18.267Zm-8.231-8.232-1.735 1.735-1.733-1.735 1.733-1.733 1.735 1.733ZM9.247 7.514 7.514 9.247 0 1.734 1.733 0l7.514 7.514ZM20 1.734l-7.514 7.513-1.733-1.733L18.266 0 20 1.734Z"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -172,14 +207,25 @@
             <from class="create-todo__form">
               <label class="create-todo__label is-required">
                 <p class="create-todo__name">Название:</p>
-                <input type="text" class="create-todo__input" name="todo-list-title" placeholder="Название"/>
+                <input
+                  type="text"
+                  class="create-todo__input"
+                  name="todo-list-title"
+                  placeholder="Название"
+                />
               </label>
 
               <div class="create-todo__actions">
-                <button class="button button--size--60-stretched button--theme--gray-400" type="reset">
+                <button
+                  class="button button--size--60-stretched button--theme--gray-400"
+                  type="reset"
+                >
                   Отменить
                 </button>
-                <button class="button button--size--60-stretched button--theme--red-300" type="submit">
+                <button
+                  class="button button--size--60-stretched button--theme--red-300"
+                  type="submit"
+                >
                   Создать
                 </button>
               </div>
@@ -187,6 +233,8 @@
           </div>
         </div>
       </div>
+
+      <div class="modal-backdrop is-hidden"></div>
     </div>
     <script type="module" src="../index.js"></script>
 
