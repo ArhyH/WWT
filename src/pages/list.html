@@ -7,7 +7,7 @@
     <title>white-wolf-tasks</title>
   </head>
   <body>
-    <div class="white-wolf-tasks" data-page="lists">
+    <div class="white-wolf-tasks" data-page="list">
       <div class="sidebar visually-hidden">
         <div class="sidebar__header">
           <div class="user"></div>
@@ -71,112 +71,106 @@
               </svg>
             </button>
           </div>
+          <h1 class="header__title">Название списка</h1>
           <div id="list-action" class="header__action">
             <button
-              id="import-button"
+              id="list-settings-button"
               class="button button--theme--transparent button--size--100-squared"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="100"
+                width="72"
+                height="72"
+                viewBox="0 0 72 72"
                 fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <mask id="a" fill="transparent">
+                <!-- First gear (top-left) -->
+                <g transform="translate(22, 18)">
+                  <!-- Gear teeth -->
+                  <path d="M 14,0 L 16,0 L 16,4 L 14,4 Z" fill="currentColor" />
+                  <path d="M 0,14 L 0,16 L 4,16 L 4,14 Z" fill="currentColor" />
+                  <path d="M 14,26 L 16,26 L 16,30 L 14,30 Z" fill="currentColor" />
+                  <path d="M 26,14 L 30,14 L 30,16 L 26,16 Z" fill="currentColor" />
+
+                  <path d="M 4,4 L 7,4 L 7,7 L 4,7 Z" fill="currentColor" />
+                  <path d="M 23,4 L 26,4 L 26,7 L 23,7 Z" fill="currentColor" />
+                  <path d="M 4,23 L 7,23 L 7,26 L 4,26 Z" fill="currentColor" />
+                  <path d="M 23,23 L 26,23 L 26,26 L 23,26 Z" fill="currentColor" />
+
+                  <!-- Outer circle with inner hole -->
                   <path
-                    d="M77 56a27 27 0 1 0-54 0h1.106a25.895 25.895 0 0 1 51.788 0H77Z"
+                    fill-rule="evenodd"
+                    fill="currentColor"
+                    d="
+                        M 15,2 A 13,13 0 1,1 15,28 A 13,13 0 1,1 15,2 Z
+                        M 15,8 A 7,7 0 1,0 15,22 A 7,7 0 1,0 15,8 Z
+                      "
                   />
-                </mask>
-                <path
-                  stroke="currentColor"
-                  stroke-width="2"
-                  d="M77 56a27 27 0 1 0-54 0h1.106a25.895 25.895 0 0 1 51.788 0H77Z"
-                  mask="url(#a)"
-                />
-                <path
-                  stroke="currentColor"
-                  d="M63.83 65.5H36.17L50 42.955 63.83 65.5Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="m50 47 9.526 15.75H40.474L50 47ZM50 39l2.887-5h-5.774L50 39Zm0-22h-.5v17.5h1V17H50ZM64 58l5 2.887v-5.774L64 58Zm22 0v-.5H68.5v1H86V58ZM59.444 47l5.576-1.495-4.082-4.082L59.444 47ZM75 31.443l-.354-.353-12.374 12.374.354.354.353.353 12.375-12.374-.354-.354ZM36 58l-5-2.887v5.774L36 58Zm-22 0v.5h17.5v-1H14v.5ZM38 47l-1.495-5.577-4.082 4.082L38 47ZM22.443 31.443l-.353.354L34.464 44.17l.354-.353.353-.354L22.797 31.09l-.354.353Z"
-                />
+                </g>
+
+                <!-- Second gear (bottom-right) -->
+                <g transform="translate(32, 30)">
+                  <!-- Gear teeth -->
+                  <path d="M 12,0 L 14,0 L 14,3 L 12,3 Z" fill="currentColor" />
+                  <path d="M 0,12 L 0,14 L 3,14 L 3,12 Z" fill="currentColor" />
+                  <path d="M 12,23 L 14,23 L 14,26 L 12,26 Z" fill="currentColor" />
+                  <path d="M 23,12 L 26,12 L 26,14 L 23,14 Z" fill="currentColor" />
+
+                  <path d="M 3,3 L 6,3 L 6,6 L 3,6 Z" fill="currentColor" />
+                  <path d="M 20,3 L 23,3 L 23,6 L 20,6 Z" fill="currentColor" />
+                  <path d="M 3,20 L 6,20 L 6,23 L 3,23 Z" fill="currentColor" />
+                  <path d="M 20,20 L 23,20 L 23,23 L 20,23 Z" fill="currentColor" />
+
+                  <!-- Outer circle with inner hole -->
+                  <path
+                    fill-rule="evenodd"
+                    fill="currentColor"
+                    d="
+                      M 13,2 A 11,11 0 1,1 13,24 A 11,11 0 1,1 13,2 Z
+                      M 13,7 A 6,6 0 1,0 13,19 A 6,6 0 1,0 13,7 Z
+                    "
+                  />
+                </g>
               </svg>
             </button>
           </div>
         </div>
         <div class="content">
-          <nav class="navigation">
-            <h1 class="navigation__title">Твои списки дел</h1>
-            <ul class="navigation__list" data-placement="lists"></ul>
-          </nav>
+          <button class="button button--size--264-stretched button--theme--transparent-bordered button--direction--column button--gap--20" id="add-first-todo-item">
+            <span class="button__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="72"
+                height="72"
+                viewBox="0 0 72 72"
+                fill="none"
+              >
+                <path fill="currentColor" d="M35.685 72 32.13 45.947h7.11L35.685 72ZM35.684 0l3.555 26.052h-7.11L35.684 0ZM72 35.684 45.947 39.24v-7.111L72 35.684ZM0 35.684l26.053-3.555v7.11L0 35.684ZM35.81 42 42 35.81l-6.19-6.189-6.189 6.19L35.811 42Z"/>
+                <path stroke="currentColor" d="m35.91 44.135 8.225-8.225-8.225-8.225-8.225 8.225 8.225 8.225Z"/>
+              </svg>
+            </span>
+            <span class="button__text">Сделай первый шаг</span>
+          </button>
+          <div class="todo-list visually-hidden"></div>
         </div>
+      </div>
+      <div class="float-element">
+        <button class="button button--size--100-circled button--theme--gray-600">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="72"
+            height="72"
+            viewBox="0 0 72 72"
+            fill="none"
+          >
+            <path fill="currentColor" d="M35.685 72 32.13 45.947h7.11L35.685 72ZM35.684 0l3.555 26.052h-7.11L35.684 0ZM72 35.684 45.947 39.24v-7.111L72 35.684ZM0 35.684l26.053-3.555v7.11L0 35.684ZM35.81 42 42 35.81l-6.19-6.189-6.189 6.19L35.811 42Z"/>
+            <path stroke="currentColor" d="m35.91 44.135 8.225-8.225-8.225-8.225-8.225 8.225 8.225 8.225Z"/>
+          </svg>
+        </button>
       </div>
     </div>
     <script type="module" src="../index.js"></script>
 
-    <template id="list-settings-button-template">
-      <button
-        id="list-settings-button"
-        class="button button--theme--transparent button--size--100-squared visually-hidden"
-      >
-        <svg
-          width="72"
-          height="72"
-          viewBox="0 0 72 72"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <!-- First gear (top-left) -->
-          <g transform="translate(22, 18)">
-            <!-- Gear teeth -->
-            <path d="M 14,0 L 16,0 L 16,4 L 14,4 Z" fill="currentColor" />
-            <path d="M 0,14 L 0,16 L 4,16 L 4,14 Z" fill="currentColor" />
-            <path d="M 14,26 L 16,26 L 16,30 L 14,30 Z" fill="currentColor" />
-            <path d="M 26,14 L 30,14 L 30,16 L 26,16 Z" fill="currentColor" />
-
-            <path d="M 4,4 L 7,4 L 7,7 L 4,7 Z" fill="currentColor" />
-            <path d="M 23,4 L 26,4 L 26,7 L 23,7 Z" fill="currentColor" />
-            <path d="M 4,23 L 7,23 L 7,26 L 4,26 Z" fill="currentColor" />
-            <path d="M 23,23 L 26,23 L 26,26 L 23,26 Z" fill="currentColor" />
-
-            <!-- Outer circle with inner hole -->
-            <path
-              fill-rule="evenodd"
-              fill="currentColor"
-              d="
-                  M 15,2 A 13,13 0 1,1 15,28 A 13,13 0 1,1 15,2 Z
-                  M 15,8 A 7,7 0 1,0 15,22 A 7,7 0 1,0 15,8 Z
-                "
-            />
-          </g>
-
-          <!-- Second gear (bottom-right) -->
-          <g transform="translate(32, 30)">
-            <!-- Gear teeth -->
-            <path d="M 12,0 L 14,0 L 14,3 L 12,3 Z" fill="currentColor" />
-            <path d="M 0,12 L 0,14 L 3,14 L 3,12 Z" fill="currentColor" />
-            <path d="M 12,23 L 14,23 L 14,26 L 12,26 Z" fill="currentColor" />
-            <path d="M 23,12 L 26,12 L 26,14 L 23,14 Z" fill="currentColor" />
-
-            <path d="M 3,3 L 6,3 L 6,6 L 3,6 Z" fill="currentColor" />
-            <path d="M 20,3 L 23,3 L 23,6 L 20,6 Z" fill="currentColor" />
-            <path d="M 3,20 L 6,20 L 6,23 L 3,23 Z" fill="currentColor" />
-            <path d="M 20,20 L 23,20 L 23,23 L 20,23 Z" fill="currentColor" />
-
-            <!-- Outer circle with inner hole -->
-            <path
-              fill-rule="evenodd"
-              fill="currentColor"
-              d="
-                M 13,2 A 11,11 0 1,1 13,24 A 11,11 0 1,1 13,2 Z
-                M 13,7 A 6,6 0 1,0 13,19 A 6,6 0 1,0 13,7 Z
-              "
-            />
-          </g>
-        </svg>
-      </button>
-    </template>
 
     <template id="navigation-item">
       <li class="navigation__item">

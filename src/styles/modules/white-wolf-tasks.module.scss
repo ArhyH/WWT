@@ -1,5 +1,6 @@
 .white-wolf-tasks {
   display: flex;
+  position: relative;
   background-image: url(../../images/white-wolf-bg-1x.png);
   background-color: var(--gray-500);
   background-size: cover;
@@ -23,6 +24,15 @@
       display: flex;
       margin-left: var(--size-128);
       margin-top: var(--size-48);
+    }
+  }
+
+  &[data-page='list'] {
+    .content {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

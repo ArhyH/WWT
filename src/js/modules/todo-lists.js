@@ -1,13 +1,10 @@
-const navList = document.querySelector('.navigation__list');
-const template = document.querySelector('#navigation-item').content;
-const navItem = template.querySelector('.navigation__item');
-const fragment = document.createDocumentFragment();
-
 const items = Array.from({ length: 7 }, (_, i) => ({
   title: `Первый список ${i++}`,
 }));
 
 const createNavItem = (element) => {
+  const template = document.querySelector('#navigation-item').content;
+  const navItem = template.querySelector('.navigation__item');
   const item = navItem.cloneNode(true);
   const text = item.querySelector('.button__text');
   text.textContent = element.title;
@@ -15,12 +12,16 @@ const createNavItem = (element) => {
 };
 
 const renderNavItems = (items) => {
+  const navList = document.querySelector('.navigation__list');
+  const fragment = document.createDocumentFragment();
+
   console.log(items);
   items.forEach((item) => {
     console.log(item);
     fragment.append(createNavItem(item));
   });
+  console.log(fragment);
   navList.append(fragment);
 };
 
-renderNavItems(items);
+export { renderNavItems, items };
