@@ -24,32 +24,10 @@
     }
 
     .button__separator {
-      position: relative;
-      height: var(--size-1);
-      width: var(--parent);
-      border: 1px solid var(--yellow-400);
-      background-color: var(--gray-1100);
-      border-radius: var(--size-1);
-      box-shadow: -1px 0 4px 0 var(--yellow-300);
+      display: flex;
+      width: 100%;
+      align-items: center;
       visibility: hidden;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: var(--size-8);
-        height: var(--size-8);
-        background-color: var(--gray-1100);
-        border-radius: var(--size-1);
-        border: 1px solid var(--yellow-400);
-        box-shadow: -1px 0 4px 0 var(--yellow-300);
-        rotate: 44.5deg;
-        z-index: 2;
-        visibility: hidden;
-        box-sizing: border-box;
-      }
     }
 
     .button__text + .button__separator {
@@ -77,6 +55,11 @@
       width: var(--size-82);
       height: var(--size-82);
       border-radius: var(--radius-24);
+    }
+
+    &--92-stretched {
+      height: var(--size-92);
+      width: var(--parent);
     }
 
     &--48-stretched {
@@ -270,15 +253,12 @@
 
     &--transparent-underlined {
       color: var(--gray-100);
+      width: fit-content;
 
       @media (hover: hover) {
         &:hover {
           .button__separator {
             visibility: visible;
-
-            &::before {
-              visibility: visible;
-            }
           }
         }
       }
@@ -289,10 +269,6 @@
 
         .button__separator {
           visibility: visible;
-
-          &::before {
-            visibility: visible;
-          }
         }
       }
     }
@@ -300,6 +276,9 @@
     &--yellow-400 {
       background-color: var(--transparent);
       color: var(--yellow-400);
+      justify-content: start;
+      gap: var(--size-20);
+      font-size: var(--size-24);
 
       @media (hover: hover) {
         &:hover {

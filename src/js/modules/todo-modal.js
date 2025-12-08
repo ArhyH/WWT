@@ -75,8 +75,8 @@ const openModal = () => {
 
 if (checkPage(page, 'list') || checkPage(page, 'lists')) {
   modalTrigger.addEventListener('click', openModal);
-  firstStepTrigger.addEventListener('click', openModal);
 }
 
-if (checkPage(page, 'lists')) {
+if (checkPage(page, 'list')) {
+  firstStepTrigger.addEventListener('click', openModal);
 }

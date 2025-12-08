@@ -5,9 +5,11 @@ const items = Array.from({ length: 7 }, (_, i) => ({
 const createNavItem = (element) => {
   const template = document.querySelector('#navigation-item').content;
   const navItem = template.querySelector('.navigation__item');
+  console.log(document.querySelector('#navigation-item').content, 'navItem');
   const item = navItem.cloneNode(true);
   const text = item.querySelector('.button__text');
   text.textContent = element.title;
+  console.log(item);
   return item;
 };
 
