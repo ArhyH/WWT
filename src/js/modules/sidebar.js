@@ -1,6 +1,6 @@
-import { toggleSidebarVisibility } from '../helpers/domHelpers';
-import { page, sidebar } from '../helpers/elements';
-import { checkPage, toggleElementVisibility } from '../helpers/helpers';
+import { toggleSidebarVisibility } from '../common/domHelpers';
+import { page, sidebar } from '../common/elements';
+import { checkPage, toggleElementVisibility } from '../common/helpers';
 
 const closeSidebarButton = document.querySelector('#close-sidebar-button');
 

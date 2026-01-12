@@ -1,6 +1,6 @@
-import { toggleSidebarVisibility } from '../helpers/domHelpers';
-import { openSidebarButton, page, sidebar } from '../helpers/elements';
-import { checkPage, toggleElementVisibility } from '../helpers/helpers';
+import { toggleSidebarVisibility } from '../common/domHelpers';
+import { openSidebarButton, page, sidebar } from '../common/elements';
+import { checkPage, toggleElementVisibility } from '../common/helpers';
 
 openSidebarButton.addEventListener('click', toggleSidebarVisibility);
 

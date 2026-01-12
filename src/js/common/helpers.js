@@ -8,6 +8,6 @@ const checkPage = (page, expectedPage) => {
   return page.dataset.page === expectedPage;
 };
 
-const checkKeyPress = (e, keyCode) => e.keyCode === keyCode;
+const checkKeyPress = (e, keyCode) => e.which === keyCode;
 
 export { toggleElementVisibility, checkPage, checkKeyPress };
