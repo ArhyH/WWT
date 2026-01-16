@@ -392,13 +392,14 @@
 
         <div class="todo-modal__content">
           <div class="create-todo">
-            <from class="create-todo__form">
+            <form class="create-todo__form" action="list.html" method="get" autocomplete="off">
               <label class="create-todo__label is-required">
                 <p class="create-todo__name">Название:</p>
                 <input
                   type="text"
                   class="create-todo__input"
                   name="title"
+                  id="title"
                   placeholder="Название"
                 />
               </label>
@@ -409,19 +410,19 @@
                   type="radio"
                   class="create-todo__radio"
                   name="priority"
-                  id="todo-list-priority-1"
+                  value="low"
                 />
                 <input
                   type="radio"
                   class="create-todo__radio"
                   name="priority"
-                  id="todo-list-priority-2"
+                  value="medium"
                 />
                 <input
                   type="radio"
                   class="create-todo__radio"
                   name="priority"
-                  id="todo-list-priority-2"
+                  value="high"
                 />
               </label>
 
@@ -431,18 +432,19 @@
                   type="text"
                   class="create-todo__input"
                   name="description"
+                  id="description"
                   placeholder="Описание элемента списка"
                 />
               </label>
 
               <label class="create-todo__label">
                 <p class="create-todo__name">Дедлайн:</p>
-                <input type="date" class="create-todo__input" name="date" />
+                <input type="date" id="date" class="create-todo__input" name="date" />
               </label>
 
               <label class="create-todo__label">
                 <p class="create-todo__name">Испольнитель:</p>
-                <select class="create-todo__select" name="assignee">
+                <select class="create-todo__select" name="assignee" id="assignee">
                   <option
                     class="create-todo__option"
                     value="default-value"
@@ -467,7 +469,7 @@
                   Создать
                 </button>
               </div>
-            </from>
+            </form>
           </div>
         </div>
       </div>
@@ -498,6 +500,17 @@
             <span class="separator separator--type--horizontal separator--theme--gray-1100-outlined has-rhombus"></span>
           </span>
         </button>
+      </li>
+    </template>
+
+    <template id="todo-item">
+      <li class="todo-item">
+        <p class="todo-item__title"></p>
+        <p class="todo-item__description"></p>
+        <p class="todo-item__priority"></p>
+        <p class="todo-item__assignee"></p>
+        <button id="update-todo" class="button button--theme--transparent button--size--100-squared">Update</button>
+        <button id="delete-todo" class="button button--theme--transparent button--size--100-squared">Delete</button>
       </li>
     </template>
   </body>

@@ -1,21 +1,51 @@
 import { createModal } from '../common/modal';
-import { page } from '../common/elements';
-import { checkPage } from '../common/helpers';
+import { onFormSubmit, populateForm } from './create-todo-form';
 
 const modalNode = document.querySelector('.todo-modal');
-const modalTrigger = document.querySelector('#modal-trigger');
 const closeNode = document.querySelector('#modal-close');
 const backdropNode = document.querySelector('.modal-backdrop');
-const firstStepTrigger = document.querySelector('#add-first-todo-item');
+const formNode = document.querySelector('.create-todo__form');
 
 const modal = createModal(modalNode, backdropNode, closeNode);
 
-const openModal = modal.open;
+let currentTodo = null;
 
-if (checkPage(page, 'list') || checkPage(page, 'lists')) {
-  modalTrigger.addEventListener('click', openModal);
-}
+const callbacks = {
+  onUpdate: null,
+  onCreate: null,
+};
 
-if (checkPage(page, 'list')) {
-  firstStepTrigger.addEventListener('click', openModal);
-}
+const setCallbacks = (onUpdate, onCreate) => {
+  callbacks.onUpdate = onUpdate;
+  callbacks.onCreate = onCreate;
+};
+
+const openModal = () => modal.open();
+
+const onTodoUpdate = (todo) => {
+  currentTodo = todo;
+  populateForm(formNode, currentTodo);
+  openModal();
+};
+
+const handleFormSubmit = (todosData) => {
+  if (currentTodo) {
+    callbacks.onUpdate?.(currentTodo, todosData);
+  } else {
+    callbacks.onCreate?.(todosData);
+  }
+  currentTodo = null;
+};
+
+modal.setOnClose(() => {
+  formNode.reset();
+});
+
+modal.addHandler(formNode, 'submit', (evt) =>
+  onFormSubmit(evt, (todosData) => {
+    handleFormSubmit(todosData);
+    modal.close();
+  })
+);
+
+export { onTodoUpdate, setCallbacks, openModal };

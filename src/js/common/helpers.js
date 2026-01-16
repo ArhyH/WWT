@@ -10,4 +10,15 @@ const checkPage = (page, expectedPage) => {
 
 const checkKeyPress = (e, keyCode) => e.which === keyCode;
 
-export { toggleElementVisibility, checkPage, checkKeyPress };
+const getElementFromTemplate = (selector) =>
+  document
+    .querySelector(`#${selector}`)
+    .content.querySelector(`.${selector}`)
+    .cloneNode(true);
+
+export {
+  toggleElementVisibility,
+  checkPage,
+  checkKeyPress,
+  getElementFromTemplate,
+};
