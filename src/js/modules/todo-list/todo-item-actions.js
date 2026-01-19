@@ -1,5 +1,5 @@
-import { getElementFromTemplate } from '../common/helpers';
-import { TodoItem } from './todo-item';
+import { getElementFromTemplate } from '../../common/helpers';
+import { TodoItem } from '../constructors/todo-item';
 
 const createTodo = (data, todoList) => {
   const todo = new TodoItem(data);
@@ -7,7 +7,7 @@ const createTodo = (data, todoList) => {
 };
 
 const updateTodo = (todo, data) => {
-  todo.onEdit(data);
+  todo.update(data);
 };
 
 const renderTodoItem = (data) => {

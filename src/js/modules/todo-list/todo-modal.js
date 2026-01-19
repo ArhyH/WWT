@@ -1,4 +1,4 @@
-import { createModal } from '../common/modal';
+import { createModal } from '../../common/modal';
 import { onFormSubmit, populateForm } from './create-todo-form';
 
 const modalNode = document.querySelector('.todo-modal');

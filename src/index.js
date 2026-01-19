@@ -1,16 +1,16 @@
 import './js/modules/header';
 import './js/modules/sidebar';
-import { renderNavItems, items } from './js/modules/todo-lists';
 import './styles/style.global.scss';
 
-import { page } from './js/common/elements';
-import { checkPage } from './js/common/helpers';
-import { initTodoList } from './js/modules/init-todo';
+import { initTodoList } from './js/modules/todo-list/init-todo';
+import {
+  initAdditionalTrigger,
+  initTodoLists,
+  todoLists,
+} from './js/modules/todo-lists/init-todo-list';
 
-if (checkPage(page, 'lists')) {
-  renderNavItems(items);
-}
+initTodoLists();
 
-if (checkPage(page, 'list')) {
-  initTodoList();
-}
+initAdditionalTrigger();
+
+initTodoList(todoLists);

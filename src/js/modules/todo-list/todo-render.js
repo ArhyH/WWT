@@ -1,4 +1,4 @@
-import { VISYALLY_HIDDEN } from '../consts/consts';
+import { VISYALLY_HIDDEN } from '../../consts/consts';
 import { onTodoUpdate } from './todo-modal';
 
 const firstStepNode = document.querySelector('#add-first-todo-item');
@@ -33,7 +33,7 @@ const onTodoListClick = (evt, todoList) => {
     return;
   }
 
-  const todoId = Number(todoItem.dataset.id);
+  const todoId = todoItem.dataset.id;
   const todo = todoList.getById(todoId);
 
   if (evt.target.closest('#delete-todo')) {
@@ -54,10 +54,10 @@ const onTodoListChange = (evt, todoList) => {
   }
 
   const todoItem = evt.target.closest('.todo-item');
-  const todoId = Number(todoItem.dataset.id);
+  const todoId = todoItem.dataset.id;
   const todo = todoList.getById(todoId);
 
-  todo.onChange();
+  todo.toggle();
   renderTodoList(todoList);
 };
 

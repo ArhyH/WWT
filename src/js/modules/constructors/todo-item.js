@@ -1,5 +1,5 @@
 function TodoItem({ title, description, priority, assignee, date }) {
-  this.id = Date.now() + Math.random();
+  this.id = (Date.now() + Math.random()).toString();
   this.title = title;
   this.description = description;
   this.priority = priority;
@@ -8,11 +8,11 @@ function TodoItem({ title, description, priority, assignee, date }) {
   this.completed = false;
 }
 
-TodoItem.prototype.onEdit = function (data) {
+TodoItem.prototype.update = function (data) {
   Object.assign(this, data);
 };
 
-TodoItem.prototype.onChange = function () {
+TodoItem.prototype.toggle = function () {
   this.completed = !this.completed;
 };
 
