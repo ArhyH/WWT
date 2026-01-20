@@ -6,7 +6,6 @@ const onFormSubmit = (evt, onSubmit) => {
 };
 
 const populateForm = (formNode, data) => {
-  console.log(data);
   formNode.querySelector('#title').value = data.title;
   formNode.querySelector('#description').value = data.description;
   formNode.querySelector('#date').value = data.date;

@@ -1,18 +1,18 @@
 import { toggleSidebarVisibility } from '../common/domHelpers';
-import { openSidebarButton, page, sidebar } from '../common/elements';
-import { checkPage, toggleElementVisibility } from '../common/helpers';
+import { openSidebarButton, sidebar } from '../common/elements';
+import { toggleElementVisibility } from '../common/helpers';
 
 openSidebarButton.addEventListener('click', toggleSidebarVisibility);
 
-if (checkPage(page, 'main')) {
-  openSidebarButton.removeEventListener('click', toggleSidebarVisibility);
-  toggleElementVisibility(openSidebarButton);
-  toggleElementVisibility(sidebar);
-}
+// if (checkPage(page, 'main')) {
+openSidebarButton.removeEventListener('click', toggleSidebarVisibility);
+toggleElementVisibility(openSidebarButton);
+toggleElementVisibility(sidebar);
+// }
 
-if (checkPage(page, 'lists')) {
-  toggleElementVisibility(openSidebarButton);
-}
+// if (checkPage(page, 'lists')) {
+// toggleElementVisibility(openSidebarButton);
+// }
 
 // Ловить клик по кнопке настроек
 // Открывать модалку

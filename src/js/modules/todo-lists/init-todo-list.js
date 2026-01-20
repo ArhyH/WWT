@@ -8,13 +8,12 @@ import {
 import { openModal, setCallbacks } from './todo-list-modal';
 import { renderTodoLists } from './todo-list-render';
 
-const todoListsNode = document.querySelector('.todo-lists');
+const todoListsNode = document.querySelectorAll('.todo-lists');
 const addListNode = document.querySelector('#add-new-list');
 const modalTrigger = document.querySelector('#modal-trigger');
 
 const todoLists = new TodoLists();
 const savedData = getData();
-console.log(todoLists);
 console.log('Saved Data:', savedData);
 
 const initTodoLists = () => {
@@ -38,7 +37,11 @@ const initTodoLists = () => {
   );
 
   addListNode.addEventListener('click', openModal);
-  todoListsNode.addEventListener('click', setActiveListId);
+  [...todoListsNode].forEach((list) => {
+    list.addEventListener('click', (evt) => setActiveListId(evt, todoLists));
+  });
+  // todoListsNode.addEventListener('click', setActiveListId);
+  modalTrigger.addEventListener('click', openModal);
 };
 
 const setActiveListId = (evt) => {
@@ -57,8 +60,4 @@ const setActiveListId = (evt) => {
   }
 };
 
-const initAdditionalTrigger = () => {
-  firstStepTrigger.addEventListener('click', openModal);
-};
-
-export { initTodoLists, initAdditionalTrigger, todoLists };
+export { initTodoLists, todoLists };

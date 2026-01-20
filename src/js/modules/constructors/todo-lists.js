@@ -2,7 +2,6 @@ function TodoLists() {
   this.lists = [];
   this.activeListId = null;
   this.onActiveListChange = null;
-  console.log(this.lists);
 }
 
 TodoLists.prototype.add = function (list) {
@@ -22,7 +21,7 @@ TodoLists.prototype.getActiveListId = function () {
 };
 
 TodoLists.prototype.setActiveListId = function (id) {
-  this.activeListId = id;
+  this.activeListId = id.toString();
   if (this.onActiveListChange) {
     this.onActiveListChange(this.getById(id));
   }

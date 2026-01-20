@@ -1,5 +1,4 @@
 import { createTodo, renderTodoItem, updateTodo } from './todo-item-actions';
-// import { TodoList } from '../constructors/todo-list';
 import { openModal, setCallbacks } from './todo-modal';
 import {
   onTodoListChange,
@@ -12,7 +11,6 @@ const todoListNode = document.querySelector('.todo-list');
 const modalTrigger = document.querySelector('#modal-trigger');
 const firstStepTrigger = document.querySelector('#add-first-todo-item');
 const savedData = getData();
-console.log(savedData);
 
 const initTodoList = (todoLists) => {
   const getActiveList = () => todoLists.getById(todoLists.activeListId);

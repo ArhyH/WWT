@@ -149,7 +149,7 @@
               </svg>
             </button>
           </div>
-          <h1 class="header__title">Название списка</h1>
+          <h1 class="header__title is-hidden">Название списка</h1>
           <div id="list-action" class="header__action">
             <button
               id="import-button"
@@ -183,7 +183,7 @@
               </svg>
             </button>
             <button
-              id="list-settings-button"
+              id="list-settings-button visually-hidden"
               class="button button--theme--transparent button--size--100-squared is-hidden"
             >
               <svg
@@ -284,12 +284,12 @@
             </ul>
           </div>
 
-          <div class="navigation" id="lists">
+          <div class="navigation visually-hidden" id="lists">
             <h1 class="navigation__title">Твои списки дел</h1>
             <ul class="todo-lists" data-placement="lists"></ul>
           </div>
 
-          <div class="first-todo" id="first-todo">
+          <div class="todo-list-wrapper visually-hidden" id="todo-list">
             <button
               class="button button--size--264-stretched button--theme--transparent-bordered button--direction--column button--gap--20"
               id="add-first-todo-item"
@@ -314,15 +314,12 @@
               </span>
               <span class="button__text">Сделай первый шаг</span>
             </button>
-          </div>
-
-          <div class="todo-list-wrapper" id="todo-list">
             <div class="todo-list visually-hidden"></div>
           </div>
         </div>
       </div>
 
-      <div class="float-element">
+      <div class="float-element visually-hidden">
         <button
           class="button button--size--100-circled button--theme--gray-600"
           id="modal-trigger"
@@ -346,7 +343,7 @@
         </button>
       </div>
 
-      <div class="todo-modal todo-list-modal is-hidden">
+      <div class="todo-modal create-todo-list-modal is-hidden">
         <div class="outline">
           <div class="outline outline__left">
             <span
@@ -412,10 +409,11 @@
         <div class="todo-modal__content">
           <div class="create-todo">
             <form
-              class="create-todo__form create-todo-list__form"
+              class="create-todo__form"
               action="lists.html"
               method="get"
               autocomplete="off"
+              id="create-todo-list"
             >
               <label class="create-todo__label is-required">
                 <p class="create-todo__name">Название:</p>
@@ -447,7 +445,7 @@
         </div>
       </div>
 
-      <div class="todo-modal is-hidden">
+      <div class="todo-modal create-todo-item-modal is-hidden">
         <div class="outline">
           <div class="outline outline__left">
             <span
@@ -511,7 +509,101 @@
         </div>
 
         <div class="todo-modal__content">
-          <div class="create-todo"></div>
+          <div class="create-todo">
+            <form
+              class="create-todo__form create-todo-item__form"
+              action="list.html"
+              method="get"
+              autocomplete="off"
+              id="create-todo-item"
+            >
+              <label class="create-todo__label is-required">
+                <p class="create-todo__name">Название:</p>
+                <input
+                  type="text"
+                  class="create-todo__input"
+                  name="title"
+                  id="title"
+                  placeholder="Название"
+                />
+              </label>
+
+              <label class="create-todo__label">
+                <p class="create-todo__name">Приоритет:</p>
+                <input
+                  type="radio"
+                  class="create-todo__radio"
+                  name="priority"
+                  value="low"
+                />
+                <input
+                  type="radio"
+                  class="create-todo__radio"
+                  name="priority"
+                  value="medium"
+                />
+                <input
+                  type="radio"
+                  class="create-todo__radio"
+                  name="priority"
+                  value="high"
+                />
+              </label>
+
+              <label class="create-todo__label">
+                <p class="create-todo__name">Описание:</p>
+                <input
+                  type="text"
+                  class="create-todo__input"
+                  name="description"
+                  id="description"
+                  placeholder="Описание элемента списка"
+                />
+              </label>
+
+              <label class="create-todo__label">
+                <p class="create-todo__name">Дедлайн:</p>
+                <input
+                  type="date"
+                  id="date"
+                  class="create-todo__input"
+                  name="date"
+                />
+              </label>
+
+              <label class="create-todo__label">
+                <p class="create-todo__name">Испольнитель:</p>
+                <select
+                  class="create-todo__select"
+                  name="assignee"
+                  id="assignee"
+                >
+                  <option
+                    class="create-todo__option"
+                    value="default-value"
+                    id="default-value"
+                  >
+                    Имя
+                  </option>
+                </select>
+              </label>
+
+              <div class="create-todo__actions">
+                <button
+                  class="button button--size--60-stretched button--theme--gray-400"
+                  type="reset"
+                >
+                  Отменить
+                </button>
+                <button
+                  class="button button--size--60-stretched button--theme--red-300"
+                  type="submit"
+                >
+                  Создать
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -541,7 +633,6 @@
     <template id="todo-list-page">
       <li class="todo-lists__item" data-placement="page">
         <button
-          href="./list.html"
           class="button button--theme--transparent-underlined button--size--48-stretched button--align--start is-separator-enabled"
         >
           <span class="button__text">item title</span>
@@ -587,129 +678,6 @@
       >
         Имя
       </option>
-    </template>
-
-    <template id="create-todo-list">
-      <form
-        class="create-todo__form"
-        action="lists.html"
-        method="get"
-        autocomplete="off"
-        id="create-todo-list"
-      >
-        <label class="create-todo__label is-required">
-          <p class="create-todo__name">Название:</p>
-          <input
-            type="text"
-            class="create-todo__input"
-            name="title"
-            id="title"
-            placeholder="Название"
-          />
-        </label>
-
-        <div class="create-todo__actions">
-          <button
-            class="button button--size--60-stretched button--theme--gray-400"
-            type="reset"
-          >
-            Отменить
-          </button>
-          <button
-            class="button button--size--60-stretched button--theme--red-300"
-            type="submit"
-          >
-            Создать
-          </button>
-        </div>
-      </form>
-    </template>
-
-    <template id="create-todo-item">
-      <form
-        class="create-todo__form"
-        action="list.html"
-        method="get"
-        autocomplete="off"
-        id="create-todo-item"
-      >
-        <label class="create-todo__label is-required">
-          <p class="create-todo__name">Название:</p>
-          <input
-            type="text"
-            class="create-todo__input"
-            name="title"
-            id="title"
-            placeholder="Название"
-          />
-        </label>
-
-        <label class="create-todo__label">
-          <p class="create-todo__name">Приоритет:</p>
-          <input
-            type="radio"
-            class="create-todo__radio"
-            name="priority"
-            value="low"
-          />
-          <input
-            type="radio"
-            class="create-todo__radio"
-            name="priority"
-            value="medium"
-          />
-          <input
-            type="radio"
-            class="create-todo__radio"
-            name="priority"
-            value="high"
-          />
-        </label>
-
-        <label class="create-todo__label">
-          <p class="create-todo__name">Описание:</p>
-          <input
-            type="text"
-            class="create-todo__input"
-            name="description"
-            id="description"
-            placeholder="Описание элемента списка"
-          />
-        </label>
-
-        <label class="create-todo__label">
-          <p class="create-todo__name">Дедлайн:</p>
-          <input type="date" id="date" class="create-todo__input" name="date" />
-        </label>
-
-        <label class="create-todo__label">
-          <p class="create-todo__name">Испольнитель:</p>
-          <select class="create-todo__select" name="assignee" id="assignee">
-            <option
-              class="create-todo__option"
-              value="default-value"
-              id="default-value"
-            >
-              Имя
-            </option>
-          </select>
-        </label>
-
-        <div class="create-todo__actions">
-          <button
-            class="button button--size--60-stretched button--theme--gray-400"
-            type="reset"
-          >
-            Отменить
-          </button>
-          <button
-            class="button button--size--60-stretched button--theme--red-300"
-            type="submit"
-          >
-            Создать
-          </button>
-        </div>
-      </form>
     </template>
   </body>
 </html>

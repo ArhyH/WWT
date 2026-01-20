@@ -1,12 +1,10 @@
 import { onTodoListUpdate } from './todo-list-modal';
 
 const todoListsNode = document.querySelectorAll('.todo-lists');
-console.log([...todoListsNode]);
 
 const renderTodoLists = (todoLists, renderTodoListItem) => {
   [...todoListsNode].forEach((list) => {
     const placement = list.dataset.placement;
-    console.log(placement);
 
     const fragment = document.createDocumentFragment();
     todoLists.lists.forEach((element) => {

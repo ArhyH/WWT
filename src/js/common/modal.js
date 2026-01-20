@@ -1,4 +1,5 @@
 import { HIDDEN } from '../consts/consts';
+import { getElementFromTemplateById } from './helpers';
 import { registerHandler, unregisterHandler } from './overlay-manager';
 
 let handlerIdCounter = 0;
@@ -67,12 +68,19 @@ function createModal(modalNode, backdropNode, closeNode) {
     }
   };
 
+  const createContent = (title, template) => {
+    modalNode.querySelector('.todo-modal__title').textContent = title;
+    const content = getElementFromTemplateById(template);
+    modalNode.querySelector('.create-todo').append(content);
+  };
+
   return {
     open,
     close,
     setOnOpen,
     setOnClose,
     addHandler,
+    createContent,
   };
 }
 

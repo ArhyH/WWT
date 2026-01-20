@@ -2,7 +2,6 @@ function TodoList({ title }) {
   this.todos = [];
   this.title = title;
   this.id = (Date.now() + Math.random()).toString();
-  console.log(this.todos);
 }
 
 TodoList.prototype.add = function (todo) {

@@ -11,10 +11,6 @@
   width: var(--size-972);
   z-index: 20;
 
-  &.is-hidden {
-    visibility: hidden;
-  }
-
   &__header {
     display: flex;
     justify-content: center;

@@ -4,13 +4,13 @@ import './styles/style.global.scss';
 
 import { initTodoList } from './js/modules/todo-list/init-todo';
 import {
-  initAdditionalTrigger,
   initTodoLists,
   todoLists,
 } from './js/modules/todo-lists/init-todo-list';
+import { initPageContent } from './js/modules/content';
 
 initTodoLists();
 
-initAdditionalTrigger();
+initPageContent(todoLists);
 
 initTodoList(todoLists);
