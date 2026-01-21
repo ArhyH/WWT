@@ -73,12 +73,22 @@
           </div>
 
           <div class="sidebar__cell">
-            <h2 class="sidebar__cell-title">Твои списки дел</h2>
+            <button
+              class="button button--theme--yellow-400 button--size--42-stretched is-modified"
+              id="sidebar-nav-lists"
+            >
+              <span class="button__text">Твои списки дел</span>
+            </button>
             <ul class="todo-lists" data-placement="sidebar"></ul>
           </div>
 
           <div class="sidebar__cell">
-            <h2 class="sidebar__cell-title">Твои списки дел</h2>
+            <button
+              class="button button--theme--yellow-400 button--size--42-stretched is-modified"
+              id="sidebar-nav-tags"
+            >
+              <span class="button__text">Теги</span>
+            </button>
             <ul class="sidebar__list">
               <li class="sidebar__item">
                 <button
@@ -183,8 +193,8 @@
               </svg>
             </button>
             <button
-              id="list-settings-button visually-hidden"
-              class="button button--theme--transparent button--size--100-squared is-hidden"
+              id="list-settings-button"
+              class="button button--theme--transparent button--size--100-squared visually-hidden"
             >
               <svg
                 width="72"
@@ -316,6 +326,8 @@
             </button>
             <div class="todo-list visually-hidden"></div>
           </div>
+
+          <div class="tags" id="tags"></div>
         </div>
       </div>
 
@@ -614,7 +626,7 @@
     <template id="todo-list-sidebar">
       <li class="todo-lists__item" data-placement="sidebar">
         <button
-          class="button button--size--size-48 button--theme--transparent-underlined is-separator-enabled button--align--start"
+          class="button button--size--48-hug button--theme--transparent-underlined is-separator-enabled button--align--start"
         >
           <span class="button__text"> Первый список </span>
           <span class="button__separator">
@@ -655,18 +667,20 @@
         <p class="todo-item__description"></p>
         <p class="todo-item__priority"></p>
         <p class="todo-item__assignee"></p>
-        <button
-          id="update-todo"
-          class="button button--theme--transparent button--size--100-squared"
-        >
-          Update
-        </button>
-        <button
-          id="delete-todo"
-          class="button button--theme--transparent button--size--100-squared"
-        >
-          Delete
-        </button>
+        <div class="todo-item__buttons">
+          <button
+            id="update-todo"
+            class="button button--theme--transparent button--size--100-squared"
+          >
+            Update
+          </button>
+          <button
+            id="delete-todo"
+            class="button button--theme--transparent button--size--100-squared"
+          >
+            Delete
+          </button>
+        </div>
       </li>
     </template>
 

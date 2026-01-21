@@ -1,16 +1,45 @@
-import { toggleSidebarVisibility } from '../common/domHelpers';
-import { sidebar } from '../common/elements';
-import { toggleElementVisibility } from '../common/helpers';
+import { setCallbacks, toggleContent } from './content-manager';
+import { setMode, SidebarMode, toggle } from './sidebar-store';
 
-const closeSidebarButton = document.querySelector('#close-sidebar-button');
+const sidebarNode = document.querySelector('.sidebar');
+const closeSidebarNode = sidebarNode.querySelector('#close-sidebar-button');
+const openSidebarNode = document.querySelector('#open-sidebar-button');
+const listNavNode = sidebarNode.querySelector('#sidebar-nav-lists');
+const tagsNavNode = sidebarNode.querySelector('#sidebar-nav-tags');
 
-closeSidebarButton.addEventListener('click', toggleSidebarVisibility);
+const onContentChange = (contentName) => {
+  if (contentName === 'first-step') {
+    setMode(SidebarMode.LOCKED_OPEN);
+    return;
+  }
 
-// if (checkPage(page, 'main')) {
-closeSidebarButton.removeEventListener('click', toggleSidebarVisibility);
-toggleElementVisibility(closeSidebarButton);
-// }
+  if (contentName === 'todo-list') {
+    setMode(SidebarMode.FORCE_CLOSED);
+    return;
+  }
 
-// if (checkPage(page, 'lists')) {
-//   toggleElementVisibility(sidebar);
-// }
+  setMode(SidebarMode.FREE);
+};
+
+sidebarNode.addEventListener('click', (evt) => {
+  const listNav = evt.target.closest('#sidebar-nav-lists');
+  const tagsNav = evt.target.closest('#sidebar-nav-tags');
+
+  if (!listNav && !tagsNav) {
+    return;
+  }
+
+  if (listNav) {
+    toggleContent('lists');
+  }
+
+  if (tagsNav) {
+    toggleContent('tags');
+  }
+});
+
+setCallbacks('sidebar', onContentChange);
+
+closeSidebarNode.addEventListener('click', toggle);
+
+openSidebarNode.addEventListener('click', toggle);

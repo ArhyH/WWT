@@ -4,15 +4,33 @@ const contentNode = document.querySelector('.content');
 
 const getContentName = (name) => contentNode.querySelector(`#${name}`);
 
-let activeContent = getContentName('first-step');
+let activeContentName = 'first-step';
+let activeContentNode = getContentName(activeContentName);
 
-const toggleContent = (content) => {
-  const prevContent = activeContent;
-  prevContent.classList.toggle(VISYALLY_HIDDEN);
-  activeContent = getContentName(content);
-  activeContent.classList.toggle(VISYALLY_HIDDEN);
+const callbacks = {};
+
+const toggleContent = (contentName) => {
+  activeContentNode.classList.add(VISYALLY_HIDDEN);
+
+  activeContentName = contentName;
+  activeContentNode = getContentName(activeContentName);
+  activeContentNode.classList.remove(VISYALLY_HIDDEN);
+
+  Object.values(callbacks).forEach((callback) => {
+    callback(activeContentName);
+  });
 };
 
-const getActiveContent = () => activeContent;
+const getActiveContent = () => activeContentName;
 
-export { toggleContent, getActiveContent };
+const setCallbacks = (name, callback) => {
+  callbacks[name] = callback;
+};
+
+const shareContentState = () => {
+  Object.values(callbacks).forEach((callback) => {
+    callback(activeContentName);
+  });
+};
+
+export { toggleContent, getActiveContent, setCallbacks, shareContentState };

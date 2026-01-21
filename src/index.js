@@ -8,6 +8,9 @@ import {
   todoLists,
 } from './js/modules/todo-lists/init-todo-list';
 import { initPageContent } from './js/modules/content';
+import { shareContentState } from './js/modules/content-manager';
+
+shareContentState();
 
 initTodoLists();
 

@@ -67,6 +67,16 @@
       width: var(--size-264);
     }
 
+    &--48-hug {
+      height: var(--size-48);
+      width: fit-content;
+    }
+
+    &--42-stretched {
+      height: var(--size-42);
+      width: var(--size-parent);
+    }
+
     &--40-circled {
       height: var(--size-40);
       width: var(--size-40);
@@ -289,6 +299,13 @@
       &:active,
       &.is-active {
         color: var(--gray-300);
+      }
+
+      &.is-modified {
+        .button__text {
+          font-size: var(--size-36);
+          text-transform: uppercase;
+        }
       }
     }
 

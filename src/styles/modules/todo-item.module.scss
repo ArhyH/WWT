@@ -1,0 +1,29 @@
+.todo-item {
+  display: flex;
+  gap: var(--size-24);
+  color: var(--gray-100);
+  font-size: 40px;
+  background-image: linear-gradient(
+    0.25turn,
+    var(--yellow-600) 0%,
+    var(--yellow-600) 40%,
+    var(--yellow-600-50) 70%,
+    var(--yellow-600-0) 100%
+  );
+
+  @media (hover: hover) {
+    &:hover {
+      background-image: none;
+      background-color: var(--yellow-500);
+      box-shadow:
+        0 0 0 1px var(--yellow-400),
+        0 0 0 3px var(--gray-1000),
+        0 0 0 4px var(--yellow-400);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: var(--size-4);
+  }
+}

@@ -2,7 +2,8 @@
   &__list {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin: var(--size-0);
+    padding: var(--size-0);
     gap: var(--size-80);
     list-style: none;
 

@@ -1,0 +1,16 @@
+.todo-lists {
+  display: flex;
+  flex-direction: column;
+  margin: var(--size-0);
+  padding: var(--size-0);
+  list-style: none;
+
+  &[data-placement='sidebar'] {
+    gap: var(--size-12);
+  }
+
+  &__item {
+    display: flex;
+    width: fit-content;
+  }
+}

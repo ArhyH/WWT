@@ -10,39 +10,25 @@
     (min-resolution: var(--retina-dpi)) {
     background-image: url(../../images/white-wolf-bg-2x.png);
   }
-
-  &[data-page='main'] {
-    .content {
-      display: flex;
-      margin-left: var(--size-154);
-      margin-top: var(--size-236);
-    }
-  }
-
-  &[data-page='lists'] {
-    .content {
-      display: flex;
-      margin-left: var(--size-128);
-      margin-top: var(--size-48);
-    }
-  }
-
-  &[data-page='list'] {
-    .content {
-      display: flex;
-      height: 100%;
-      align-items: center;
-      justify-content: center;
-    }
-  }
 }
 
 .main {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-height: var(--size-1080);
 }
 
 .content {
   display: flex;
+  margin-left: var(--size-128);
+
+  &.is-full-page {
+    margin-left: var(--size-32);
+    margin-right: var(--size-140);
+  }
+
+  &.has-float-element {
+    margin-right: var(--size-140);
+  }
 }

@@ -40,7 +40,7 @@ const initTodoLists = () => {
   [...todoListsNode].forEach((list) => {
     list.addEventListener('click', (evt) => setActiveListId(evt, todoLists));
   });
-  // todoListsNode.addEventListener('click', setActiveListId);
+
   modalTrigger.addEventListener('click', openModal);
 };
 
@@ -52,12 +52,6 @@ const setActiveListId = (evt) => {
 
   todoLists.setActiveListId(listItem.dataset.id);
   saveData(todoLists);
-  console.log('Active List ID set:', todoLists.activeListId);
-
-  const link = listItem.querySelector('.todo-lists__link');
-  if (link) {
-    window.location.href = link.href;
-  }
 };
 
 export { initTodoLists, todoLists };

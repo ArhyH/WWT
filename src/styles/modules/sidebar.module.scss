@@ -8,11 +8,13 @@
   margin-left: 76px;
   padding: var(--size-20) var(--size-32);
   gap: var(--size-100);
+  box-sizing: border-box;
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: var(--size-100);
   }
 
   &__user {
@@ -36,12 +38,6 @@
     display: flex;
     flex-direction: column;
     gap: var(--size-20);
-  }
-
-  &__cell-title {
-    font-size: var(--size-36);
-    color: var(--yellow-400);
-    text-transform: uppercase;
   }
 
   &__list {
