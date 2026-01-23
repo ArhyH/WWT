@@ -7,17 +7,17 @@ const closeSidebarNode = sidebarNode.querySelector('#close-sidebar-button');
 const openSidebarNode = document.querySelector('#open-sidebar-button');
 
 const onContentChange = (contentName) => {
-  if (contentName === 'first-step') {
-    setMode(SidebarMode.LOCKED_OPEN);
-    return;
-  }
+  // if (contentName === 'first-step') {
+  //   setMode(SidebarMode.LOCKED_OPEN);
+  //   return;
+  // }
 
   if (contentName === 'todo-list') {
     setMode(SidebarMode.FORCE_CLOSED);
     return;
   }
 
-  setMode(SidebarMode.FREE);
+  setMode(SidebarMode.LOCKED_OPEN);
 };
 
 const initSidebar = () => {

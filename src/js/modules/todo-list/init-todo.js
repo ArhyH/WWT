@@ -1,5 +1,6 @@
 import { createTodo, renderTodoItem, updateTodo } from './todo-item-actions';
 import { openModal, setCallbacks } from './todo-modal';
+import { setCallbacks as setCallbacksContent } from '../content-manager';
 import {
   onTodoListChange,
   onTodoListClick,
@@ -12,7 +13,17 @@ const modalTrigger = document.querySelector('#modal-trigger');
 const firstStepTrigger = document.querySelector('#add-first-todo-item');
 const savedData = getData();
 
+const onContentChange = (contentName) => {
+  if (contentName === 'todo-list') {
+    modalTrigger.addEventListener('click', openModal);
+    return;
+  }
+
+  modalTrigger.removeEventListener('click', openModal);
+};
+
 const initTodoList = (todoLists) => {
+  setCallbacksContent('todo', onContentChange);
   const getActiveList = () => todoLists.getById(todoLists.activeListId);
 
   todoLists.onActiveListChange = () =>
@@ -46,7 +57,6 @@ const initTodoList = (todoLists) => {
   todoListNode.addEventListener('change', (evt) =>
     onTodoListChange(evt, getActiveList())
   );
-  modalTrigger.addEventListener('click', openModal);
   firstStepTrigger.addEventListener('click', openModal);
 };
 

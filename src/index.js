@@ -9,6 +9,7 @@ import { initPageContent } from './js/modules/content';
 import { shareContentState } from './js/modules/content-manager';
 import { initSidebar } from './js/modules/sidebar/init-sidebar';
 import { initHeader } from './js/modules/header/init-header';
+import { initFloatElement } from './js/modules/float-element';
 
 shareContentState();
 
@@ -21,3 +22,5 @@ initTodoLists();
 initPageContent(todoLists);
 
 initTodoList(todoLists);
+
+initFloatElement();

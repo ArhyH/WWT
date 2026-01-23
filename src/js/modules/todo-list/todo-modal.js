@@ -2,7 +2,7 @@ import { createModal } from '../../common/modal';
 import { onFormSubmit, populateForm } from './create-todo-form';
 
 const modalNode = document.querySelector('.create-todo-item-modal');
-const closeNode = document.querySelector('#modal-close');
+const closeNode = document.querySelector('#modal-close-todo');
 const backdropNode = document.querySelector('.modal-backdrop');
 const formNode = document.querySelector('#create-todo-item');
 

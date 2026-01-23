@@ -7,6 +7,7 @@ import {
 } from './todo-list-actions';
 import { openModal, setCallbacks } from './todo-list-modal';
 import { renderTodoLists } from './todo-list-render';
+import { setCallbacks as setCallbacksContent } from '../content-manager';
 
 const todoListsNode = document.querySelectorAll('.todo-lists');
 const addListNode = document.querySelector('#add-new-list');
@@ -16,7 +17,18 @@ const todoLists = new TodoLists();
 const savedData = getData();
 console.log('Saved Data:', savedData);
 
+const onContentChange = (contentName) => {
+  if (contentName === 'lists') {
+    modalTrigger.addEventListener('click', openModal);
+    return;
+  }
+
+  modalTrigger.removeEventListener('click', openModal);
+};
+
 const initTodoLists = () => {
+  setCallbacksContent('todo-list', onContentChange);
+
   if (savedData) {
     todoLists.lists = savedData.lists;
     todoLists.activeListId = savedData.activeListId;
@@ -40,8 +52,6 @@ const initTodoLists = () => {
   [...todoListsNode].forEach((list) => {
     list.addEventListener('click', (evt) => setActiveListId(evt, todoLists));
   });
-
-  modalTrigger.addEventListener('click', openModal);
 };
 
 const setActiveListId = (evt) => {

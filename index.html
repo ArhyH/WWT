@@ -294,36 +294,42 @@
             </ul>
           </div>
 
-          <div class="navigation visually-hidden" id="lists">
+          <div
+            class="navigation visually-hidden"
+            id="lists"
+            data-placement="lists"
+          >
             <h1 class="navigation__title">Твои списки дел</h1>
             <ul class="todo-lists" data-placement="lists"></ul>
           </div>
 
-          <div class="todo-list-wrapper visually-hidden" id="todo-list">
-            <button
-              class="button button--size--264-stretched button--theme--transparent-bordered button--direction--column button--gap--20"
-              id="add-first-todo-item"
-            >
-              <span class="button__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="72"
-                  height="72"
-                  viewBox="0 0 72 72"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M35.685 72 32.13 45.947h7.11L35.685 72ZM35.684 0l3.555 26.052h-7.11L35.684 0ZM72 35.684 45.947 39.24v-7.111L72 35.684ZM0 35.684l26.053-3.555v7.11L0 35.684ZM35.81 42 42 35.81l-6.19-6.189-6.189 6.19L35.811 42Z"
-                  />
-                  <path
-                    stroke="currentColor"
-                    d="m35.91 44.135 8.225-8.225-8.225-8.225-8.225 8.225 8.225 8.225Z"
-                  />
-                </svg>
-              </span>
-              <span class="button__text">Сделай первый шаг</span>
-            </button>
+          <div class="first-step visually-hidden" id="todo-list">
+            <div class="first-step__wrapper">
+              <button
+                class="button button--size--264-stretched button--theme--transparent-bordered button--direction--column button--gap--20"
+                id="add-first-todo-item"
+              >
+                <span class="button__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="72"
+                    height="72"
+                    viewBox="0 0 72 72"
+                    fill="none"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M35.685 72 32.13 45.947h7.11L35.685 72ZM35.684 0l3.555 26.052h-7.11L35.684 0ZM72 35.684 45.947 39.24v-7.111L72 35.684ZM0 35.684l26.053-3.555v7.11L0 35.684ZM35.81 42 42 35.81l-6.19-6.189-6.189 6.19L35.811 42Z"
+                    />
+                    <path
+                      stroke="currentColor"
+                      d="m35.91 44.135 8.225-8.225-8.225-8.225-8.225 8.225 8.225 8.225Z"
+                    />
+                  </svg>
+                </span>
+                <span class="button__text">Сделай первый шаг</span>
+              </button>
+            </div>
             <div class="todo-list visually-hidden"></div>
           </div>
 
@@ -400,7 +406,7 @@
           <div class="todo-modal__close">
             <button
               class="button button--size--40-circled button--theme--gray-300"
-              id="modal-close"
+              id="modal-close-list"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -502,7 +508,7 @@
           <div class="todo-modal__close">
             <button
               class="button button--size--40-circled button--theme--gray-300"
-              id="modal-close"
+              id="modal-close-todo"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

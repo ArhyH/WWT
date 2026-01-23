@@ -6,11 +6,11 @@ const todoListNode = document.querySelector('.todo-list');
 
 const checkTodoList = (todoList) => {
   if (todoList.todos.length > 0) {
-    firstStepNode.classList.add(VISYALLY_HIDDEN);
+    firstStepNode.parentElement.classList.add(VISYALLY_HIDDEN);
     todoListNode.classList.remove(VISYALLY_HIDDEN);
     return;
   }
-  firstStepNode.classList.remove(VISYALLY_HIDDEN);
+  firstStepNode.parentElement.classList.remove(VISYALLY_HIDDEN);
   todoListNode.classList.add(VISYALLY_HIDDEN);
 };
 

@@ -4,7 +4,7 @@
   background-image: url(../../images/white-wolf-bg-1x.png);
   background-color: var(--gray-500);
   background-size: cover;
-  // height: 100vh;
+  height: 100vh;
 
   @media (min-resolution: var(--retina-dppx)),
     (min-resolution: var(--retina-dpi)) {
@@ -16,19 +16,20 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: var(--size-1080);
+  height: var(--parent);
+  // min-height: var(--size-1080);
 }
 
 .content {
   display: flex;
-  margin-left: var(--size-128);
+  // align-items: center;
+  // justify-content: center;
+  height: var(--parent);
 
-  &.is-full-page {
-    margin-left: var(--size-32);
-    margin-right: var(--size-140);
-  }
+  // &.is-full-page {
+  //   margin-left: unset;
+  // }
+}
 
-  &.has-float-element {
-    margin-right: var(--size-140);
-  }
+.first-step {
 }

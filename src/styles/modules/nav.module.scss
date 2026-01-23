@@ -1,4 +1,10 @@
 .navigation {
+  margin-left: var(--size-154);
+
+  &[data-placement='lists'] {
+    margin-left: var(--size-128);
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -20,6 +26,7 @@
     color: var(--gray-a100);
     font-size: var(--size-64);
     font-weight: 500;
+    margin-bottom: var(--size-120);
   }
 
   &__title + &__list {

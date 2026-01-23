@@ -1,7 +1,7 @@
 .todo-modal {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50vh;
+  left: 50vw;
   transform: translate(-50%, -50%);
   background-color: var(--gray-1000);
   border-radius: var(--radius-8);
