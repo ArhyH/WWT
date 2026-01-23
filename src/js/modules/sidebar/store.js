@@ -1,9 +1,3 @@
-import { sidebar } from '../common/elements';
-import { VISYALLY_HIDDEN } from '../consts/consts';
-
-const closeSidebarButton = document.querySelector('#close-sidebar-button');
-const openSidebarButton = document.querySelector('#open-sidebar-button');
-
 const SidebarMode = {
   LOCKED_OPEN: 'locked-open',
   FORCE_CLOSED: 'force-closed',
@@ -16,11 +10,11 @@ const SidebarState = {
 };
 
 let state = SidebarState.OPENED;
-let mode = SidebarMode.FREE;
+let mode = SidebarMode.LOCKED_OPEN;
 
 const subscribers = [];
 
-const getState = () => {
+const getEffectiveState = (state) => {
   if (mode === SidebarMode.LOCKED_OPEN) {
     return SidebarState.OPENED;
   }
@@ -28,28 +22,9 @@ const getState = () => {
   return state;
 };
 
-const apply = () => {
-  const currentState = getState();
-  const isOpened = currentState == SidebarState.OPENED;
-
-  sidebar.classList.toggle(VISYALLY_HIDDEN, !isOpened);
-
-  closeSidebarButton.classList.toggle(
-    VISYALLY_HIDDEN,
-    !isOpened || mode === SidebarMode.LOCKED_OPEN
-  );
-
-  openSidebarButton.classList.toggle(VISYALLY_HIDDEN, isOpened);
-};
-
-const notify = () => {
-  subscribers.forEach((callback) => callback({ state, mode }));
-};
-
 const setState = (nextState) => {
-  state = nextState;
-  apply();
-  notify();
+  state = getEffectiveState(nextState);
+  notify(state, mode);
 };
 
 const setMode = (nextMode) => {
@@ -63,8 +38,7 @@ const setMode = (nextMode) => {
     state = SidebarState.CLOSED;
   }
 
-  apply();
-  notify();
+  notify(state, mode);
 };
 
 const toggle = () => {
@@ -77,8 +51,31 @@ const toggle = () => {
   );
 };
 
+const notify = (state, mode) => {
+  let isOpened = false;
+  let isLockedOpen = false;
+  let isCloseButtonVisible = false;
+
+  if (state == SidebarState.OPENED) {
+    isOpened = true;
+  }
+
+  if (mode == SidebarMode.LOCKED_OPEN) {
+    isLockedOpen = true;
+  }
+
+  if (isOpened && !isLockedOpen) {
+    isCloseButtonVisible = true;
+  }
+
+  subscribers.forEach((callback) =>
+    callback({ isOpened, isCloseButtonVisible })
+  );
+};
+
 const subscribe = (callback) => {
   subscribers.push(callback);
+  notify(state, mode);
 };
 
 export { SidebarState, SidebarMode, setState, setMode, toggle, subscribe };
